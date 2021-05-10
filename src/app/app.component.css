@@ -31,7 +31,7 @@
 	margin-left: 5px;
 }
 #menu li a:hover {
-	color: #0099CC;
+	color: #cc0000;
 	background: #F2F2F2;
 }
 #menu input {
@@ -58,7 +58,7 @@
 #menu ul.sub-menus{
 	height: auto;
 	overflow: hidden;
-	width: 170px;
+	width: auto;
 	background: #444444;
 	position: absolute;
 	z-index: 99;

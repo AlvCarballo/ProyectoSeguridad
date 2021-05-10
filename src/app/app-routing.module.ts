@@ -18,6 +18,7 @@ import { HardwareseguridadComponent } from './webs/hardwareseguridad/hardwareseg
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './webs/principal/principal.component';
+import { SeguridadwifiComponent } from './webs/recomendaciones/seguridadwifi/seguridadwifi.component';
 
 const routes: Routes = [
   {path: '', component:PrincipalComponent},
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'recomendaciones', component:RecomendacionesComponent},
   {path: 'recomendaciones/copiasseguridad', component:CopiasseguridadComponent},
   {path: 'recomendaciones/seguridadonline', component:SeguridadonlineComponent},
+  {path: 'recomendaciones/seguridadwifi', component:SeguridadwifiComponent},
 
   {path: 'tiposmalware', component:TiposmalwareComponent},
   {path: 'tiposmalware/virus', component:VirusComponent},

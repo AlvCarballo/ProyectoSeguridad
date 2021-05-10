@@ -1,40 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>CiberSeguridad</title><!--Cabecera del documento-->
+	</head>
+	<body>
+		<div id="header">
+			<nav id='menu'>
+        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+        <ul>
+          <li><a href='.'>Home</a></li>
+          <li><a class='dropdown-arrow' href='./recomendaciones'>Recomendaciones</a>
+            <ul class='sub-menus'>
+              <li><a href='./recomendaciones/copiasseguridad'>Copias de seguridad</a></li>
+              <li><a href='./recomendaciones/seguridadonline'>Seguridad online</a></li>
+              <li><a href='./recomendaciones/seguridadwifi'>Seguridad Wifi</a></li>
+            </ul>
+          </li>
+          <li><a class='dropdown-arrow' href='./identificarataques'>Identificar Ataques</a>
+            <ul class='sub-menus'>
+              <li><a href='./identificarataques/falsapublicidad'>Falsa publicidad</a></li>
+              <li><a href='./identificarataques/falsoscorreos'>Falsos correos</a></li>
+            </ul>
+          </li>
+          <li><a class='dropdown-arrow' href='./tiposmalware'>Tipos de malware</a>
+            <ul class='sub-menus'>
+              <li><a href='./tiposmalware/virus'>Virus</a></li>
+              <li><a href='./tiposmalware/gusano'>Gusano</a></li>
+              <li><a href='./tiposmalware/troyano'>Troyano</a></li>
+              <li><a href='./tiposmalware/rasomware'>Rasomware</a></li>
+            </ul>
+          </li>
+          <li><a class='dropdown-arrow' href='./hardwareseguridad'>Hardware de seguridad</a>
+            <ul class='sub-menus'>
+              <li><a href='./hardwareseguridad/llavesseguridad'>Llaves de seguridad</a></li>
+              <li><a href='./hardwareseguridad/seguridadbiometrica'>Seguridad biométrica</a></li>
+            </ul>
+          </li>
+          <li><a class='dropdown-arrow' href='./softwareseguridad'>Software de seguridad</a>
+            <ul class='sub-menus'>
+              <li><a href='./softwareseguridad/antivirus'>Antivirus</a></li>
+              <li><a href='./softwareseguridad/gestorespasswd'>Gestores de contraseña</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+		</div>
+		<div class="Secciones0">
 
-<nav id='menu'>
-  <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
-  <ul>
-    <li><a href='http://'>Home</a></li>
-    <li><a class='dropdown-arrow' href='./recomendaciones'>Recomendaciones</a>
-      <ul class='sub-menus'>
-        <li><a href='./recomendaciones/copiasseguridad'>Copias de seguridad</a></li>
-        <li><a href='./recomendaciones/seguridadonline'>Seguridad online</a></li>
-      </ul>
-    </li>
-    <li><a class='dropdown-arrow' href='./identificarataques'>Identificar Ataques</a>
-      <ul class='sub-menus'>
-        <li><a href='./identificarataques/falsapublicidad'>Falsa publicidad</a></li>
-        <li><a href='./identificarataques/falsoscorreos'>Falsos correos</a></li>
-      </ul>
-    </li>
-    <li><a class='dropdown-arrow' href='./tiposmalware'>Tipos de malware</a>
-      <ul class='sub-menus'>
-        <li><a href='./tiposmalware/virus'>Virus</a></li>
-        <li><a href='./tiposmalware/gusano'>Gusano</a></li>
-        <li><a href='./tiposmalware/troyano'>Troyano</a></li>
-        <li><a href='./tiposmalware/rasomware'>Rasomware</a></li>
-      </ul>
-    </li>
-    <li><a class='dropdown-arrow' href='./hardwareseguridad'>Hardware de seguridad</a>
-      <ul class='sub-menus'>
-        <li><a href='./hardwareseguridad/llavesseguridad'>Llaves de seguridad</a></li>
-        <li><a href='./hardwareseguridad/seguridadbiometrica'>Seguridad biométrica</a></li>
-      </ul>
-    </li>
-    <li><a class='dropdown-arrow' href='./softwareseguridad'>Software de seguridad</a>
-      <ul class='sub-menus'>
-        <li><a href='./softwareseguridad/antivirus'>Antivirus</a></li>
-        <li><a href='./softwareseguridad/gestorespasswd'>Gestores de contraseña</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
+      <router-outlet></router-outlet>
+		</div>
+
+		<div id="logeo" class="logeo">
+      <br>
+      <form>
+        <input type="text" placeholder="Ingresa tu usuario">
+        <br>
+        <input type="password" placeholder="Ingresa tu contraseña">
+        <br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+		<div id="Footer">
+			<p class="centrado">&copy; 2021</p>
+		</div>
+	</body>
+</html>
