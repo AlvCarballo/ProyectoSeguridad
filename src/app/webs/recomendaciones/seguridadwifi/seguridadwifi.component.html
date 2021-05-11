@@ -1,7 +1,7 @@
 <div class="Secciones">
 <h1>Guía para descifrar contraseñas Wifi</h1>
 <video controls>
-  <source src="./aircrack.mp4" type="video/mp4">
+  <source src="assets/video/aircrack.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
   <p>El siguiente tutorial es sólo para fines educativos. Utilice esta herramienta bajo su propio riesgo.
@@ -12,25 +12,25 @@
 
   <p>Lo primero es abrir un terminal, y escribiremos el siguiente comando para comprobar que detectamos la tarjeta de red.</p>
   <p class="code">airmon-ng</p>
-  <img src="./aircrack/airmon-ng.PNG" alt="imagen del terminal con el comando airmon-ng" width="100%">
+  <img src="assets/images/airmon-ng.PNG" alt="imagen del terminal con el comando airmon-ng" width="100%">
   <p>Lo siguiente será parar todos los procesos que puedan interferir con el proceso de captura de paquetes, para ello escribiremos el siguiente comando.</p>
   <p class="code">airmon-ng check kill</p>
-  <img src="./aircrack/airmon-ngcheckkill.PNG" alt="imagen del terminal con el comando airmon-ng check kill">
+  <img src="assets/images/airmon-ngcheckkill.PNG" alt="imagen del terminal con el comando airmon-ng check kill">
   <p>Lo siguiente es poner el adaptador de red en modo monitor, para ello pondremos el siguiente comando.</p>
   <p class="code">airmon-ng start wlan0</p>
-  <img src="./aircrack/airmon-ngstartwlan0.PNG" alt="imagen del terminal con el comando airmon-ng start wlan0" width="100%">
+  <img src="assets/images/airmon-ngstartwlan0.PNG" alt="imagen del terminal con el comando airmon-ng start wlan0" width="100%">
   <p>A continuación, ponemos el siguiente comando para listar las redes cercanas.</p>
   <p class="code">Airodump-ng wlan0mon</p>
-  <img src="./aircrack/airodump-ngwlan0mon.PNG" alt="imagen del terminal con la lista de redes cercanas" width="100%">
+  <img src="assets/images/airodump-ngwlan0mon.PNG" alt="imagen del terminal con la lista de redes cercanas" width="100%">
   <p>A continuación, después de haber visto su objetivo presione las teclas Ctrl+C y ejecute el comando:</p>
   <p class="code">Airodump-ng -c 11 –bssid 98:DA:C4:E9:24:94 –write studium wlan0mon</p>
-  <img src="./aircrack/Airodump-ngselecionarredwlan0mon.PNG" alt="imagen del terminal de la red selecionada sin handshake" width="100%">
+  <img src="assets/images/Airodump-ngselecionarredwlan0mon.PNG" alt="imagen del terminal de la red selecionada sin handshake" width="100%">
   <p>A continuación, ponemos el siguiente comando para listar las redes cercanas.</p>
   <p class="code">Airodump-ng wlan0mon</p>
   <p>Una vez echo el ataque tendremos que esperar a que salga el handshake.</p>
-  <img src="./aircrack/handshakeencontrado.PNG" alt="imagen del terminal de la red selecionada con handshake" width="100%">
+  <img src="assets/images/handshakeencontrado.PNG" alt="imagen del terminal de la red selecionada con handshake" width="100%">
   <p>Cuando lo tengamos podemos pulsal Ctrl+C y ejecutar el siguiente comando.</p>
   <p class="code">Aircrack-ng studium-01.cap -w rockyou.txt</p>
   <p>Con ello empezará a buscar la clave en el diccionario que hemos indicado y a compararla con la clave cogida en el handshake. Si la encuentra nos la mostrara como en la siguiente imagen.</p>
-  <img src="./aircrack/claveencontrada.PNG" alt="imagen del terminal mostrando la clave encontrada" width="100%">
+  <img src="assets/images/claveencontrada.PNG" alt="imagen del terminal mostrando la clave encontrada" width="100%">
 </div>
