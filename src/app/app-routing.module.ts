@@ -19,9 +19,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './webs/principal/principal.component';
 import { SeguridadwifiComponent } from './webs/recomendaciones/seguridadwifi/seguridadwifi.component';
+import { RegisterComponent } from './webs/register/register.component';
 
 const routes: Routes = [
   {path: '', component:PrincipalComponent},
+  {path: 'registro', component:RegisterComponent},
 
   {path: 'hardwareseguridad', component:HardwareseguridadComponent},
   {path: 'hardwareseguridad/llavesseguridad', component:LlavesseguridadComponent},
