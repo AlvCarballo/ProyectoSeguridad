@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HardwareseguridadModule } from './webs/hardwareseguridad/hardwareseguridad.module';
 import { IdentificarataquesModule } from './webs/identificarataques/identificarataques.module';
@@ -11,7 +12,6 @@ import { RecomendacionesModule } from './webs/recomendaciones/recomendaciones.mo
 import { SoftwareseguridadModule } from './webs/softwareseguridad/softwareseguridad.module';
 import { TiposmalwareModule } from './webs/tiposmalware/tiposmalware.module';
 import { RegisterComponent } from './webs/register/register.component';
-
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { RegisterComponent } from './webs/register/register.component';
     TiposmalwareModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

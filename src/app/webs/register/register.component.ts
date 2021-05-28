@@ -1,36 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
+import { User } from '../../models/user';
 import { NgForm  } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [UserService]
 })
 export class RegisterComponent implements OnInit {
   public page_title: string;
   public user: User;
-  constructor() {
+  public status: string;
+
+  constructor(
+    private _userService:UserService
+  ) {
     this.page_title = "Registro de usuarios";
-    this.user = new User(1,'','','','','','','','','');
+    this.user = new User('','','1','','','','');
+    this.status="";
    }
+
   ngOnInit(): void {
-    console.log(this.user);
   }
   onSubmit(form: NgForm){
-    const { uId, uEmail, uPassword, uRole, uNombre, uApellidos, uTelefono, uDireccion, uCreated_at, uDelete_at } = form.value;
-    this.user = {
-      uId,
-      uEmail,
-      uPassword,
-      uRole,
-      uNombre,
-      uApellidos,
-      uTelefono,
-      uDireccion,
-      uCreated_at,
-      uDelete_at
-    }
-    console.log(this.user);
+    this._userService.register(this.user).subscribe(
+      response => {
+        if(response.status == 'success'){
+          this.status = 'success';
+          form.reset();
+        }else{
+          this.status ='error';
+        }
+      },
+      error => {
+        this.status = 'error';
+        console.log(error);
+      }
+
+    );
+
   }
 }
