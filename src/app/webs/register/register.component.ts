@@ -31,5 +31,6 @@ export class RegisterComponent implements OnInit {
       uCreated_at,
       uDelete_at
     }
+    console.log(this.user);
   }
 }

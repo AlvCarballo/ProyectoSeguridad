@@ -2,22 +2,53 @@
   <div class="col-md-12 mt-3">
     <h1>{{page_title}}</h1>
     <hr>
-    <form class="col-md-5 ml-0 pl-0" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
-      <div class="form-group">
-        <label for="uNombre">Nombre </label>
-        <input type="text" name="uNombre" #name="ngModel" [(ngModel)]="user.uNombre" class="form-control" required pattern="[a-zA-Z+">
-        <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
-          El nombre no es válido
-        </small>
-      </div>
-      <div class="form-group">
-        <label for="uApellidos">Apellidos </label>
-        <input type="text" name="uApellidos" #name="ngModel" [(ngModel)]="user.uApellidos" class="form-control" required pattern="[a-zA-Z+">
-        <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
-          El apellido no es válido
-        </small>
-      </div>
-    </form>
-
+    <div class="registro">
+      <form class="col-md-5 ml-5 pl-5" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+        <div class="form-group">
+          <label for="uNombre">Nombre </label>
+          <input type="text" name="uNombre" #name="ngModel" [(ngModel)]="user.uNombre" class="form-control" required pattern="[a-zA-Z]+">
+          <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
+            El nombre no es válido
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="uApellidos">Apellidos </label>
+          <input type="text" name="uApellidos" #uApellidos="ngModel" [(ngModel)]="user.uApellidos" class="form-control" required pattern="[a-zA-Z]+">
+          <small *ngIf="!uApellidos.valid && uApellidos.touched" class="invalid-feedback d-block">
+            El apellido no es válido
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="uTelefono">Teléfono </label>
+          <input type="text" name="uTelefono" #uTelefono="ngModel" [(ngModel)]="user.uTelefono" class="form-control" required pattern="[0-9]+">
+          <small *ngIf="!uTelefono.valid && uTelefono.touched" class="invalid-feedback d-block">
+            El teléfono no es válido
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="uDireccion">Dirección </label>
+          <input type="text" name="uDireccion" #uDireccion="ngModel" [(ngModel)]="user.uDireccion" class="form-control" required pattern="[a-zA-Z]+">
+          <small *ngIf="!uDireccion.valid && uDireccion.touched" class="invalid-feedback d-block">
+            La dirección no es válido
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="uEmail">Email </label>
+          <input type="text" name="uEmail" #uEmail="ngModel" [(ngModel)]="user.uEmail" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          <small *ngIf="!uEmail.valid && uEmail.touched" class="invalid-feedback d-block">
+            El email no es válido
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="uPassword">Contraseña </label>
+          <input type="text" name="uPassword" #uPassword="ngModel" [(ngModel)]="user.uPassword" class="form-control" required>
+          <small *ngIf="!uPassword.valid && uPassword.touched" class="invalid-feedback d-block">
+            Debes de introducir alguna contraseña
+          </small>
+        </div>
+        <br>
+        <input type="submit" value="registarme" class="btn btn-success" [disabled]="registerForm.invalid" />
+      </form>
+    </div>
   </div>
 </div>

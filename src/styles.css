@@ -87,6 +87,8 @@ h1 {
   font-weight: bold;
   text-align: center;
   color: teal;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 h2 {
   /*Pone la letra del h2 en 25 en negrita y en mayusculas*/
@@ -96,6 +98,8 @@ h2 {
   text-align: center;
   padding-top: 2%;
   color: teal;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 h3 {
   /*Pone la letra del h2 en 25 en negrita y en mayusculas*/
@@ -104,6 +108,8 @@ h3 {
   font-weight: bold;
   text-align: center;
   color: teal;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 h4 {
   /*Pone la letra del h2 en 25 en negrita y en mayusculas*/
@@ -111,6 +117,8 @@ h4 {
   text-transform: uppercase; text-shadow: 1px 2px 2px greenyellow;
   font-weight: bold;
   color: teal;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .negrita {
   font-weight: bold;
@@ -148,6 +156,8 @@ p {
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.6;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .centrado2{ vertical-align: center; }
 etiquetas {
@@ -175,4 +185,39 @@ ul{
 }
 li{
   text-justify: inter-word;
+}
+.registro{
+  margin-left: 10px;
+  margin-right: 10px;
+  display:flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.botonera {
+  margin-top: 10px;
+  display:block;
+  margin:auto;
+}
+
+.botonera>li {
+  display: inline-block;
+}
+#linea{
+  margin-top: 10px;
+  display:block;
+}
+#derecha {
+  display: inline-block;
+  right: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#izquierda {
+  display: inline-block;
+  left: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
