@@ -21,12 +21,14 @@ import { PrincipalComponent } from './webs/principal/principal.component';
 import { SeguridadwifiComponent } from './webs/recomendaciones/seguridadwifi/seguridadwifi.component';
 import { RegisterComponent } from './webs/register/register.component';
 import { LoginComponent } from './webs/login/login.component';
+import { UserEditComponent } from './webs/user-edit/user-edit.component';
 
 const routes: Routes = [
   {path: '', component:PrincipalComponent},
   {path: 'registro', component:RegisterComponent},
   // {path: 'login', component:LoginComponent},
   {path: 'logout/:sure', component:LoginComponent},
+  {path: 'useredit', component:UserEditComponent},
 
   {path: 'hardwareseguridad', component:HardwareseguridadComponent},
   {path: 'hardwareseguridad/llavesseguridad', component:LlavesseguridadComponent},

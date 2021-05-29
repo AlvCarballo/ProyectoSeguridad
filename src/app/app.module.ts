@@ -13,13 +13,15 @@ import { SoftwareseguridadModule } from './webs/softwareseguridad/softwareseguri
 import { TiposmalwareModule } from './webs/tiposmalware/tiposmalware.module';
 import { RegisterComponent } from './webs/register/register.component';
 import { LoginComponent } from './webs/login/login.component';
+import { UserEditComponent } from './webs/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

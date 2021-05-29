@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { NgForm  } from '@angular/forms';
 import { UserService } from '../../services/user.service';
@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
   public page_title: string;
   public user: User;
   public identity: any;
-  public token: any;
-
+  public token: string | any;
   public status2: string;
 
   constructor(
@@ -30,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.status2="";
    }
 
-  onSubmit(form: NgForm){
+   onSubmit(form: NgForm){
     this._userService.signup(this.user).subscribe(
       response => {
         if(!response.status || response.status !='error'){
@@ -46,8 +45,6 @@ export class LoginComponent implements OnInit {
                 //Guardamos el login
                 localStorage.setItem('token', this.token);
                 localStorage.setItem('identity', JSON.stringify(this.identity));
-                //redirecionamos
-                //this._router.navigate(['/']);
               }else{
                 this.status2='error';
               }
@@ -67,16 +64,10 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  ngDoCheck(): void {
-    this.loadUser();
-  }
   ngOnInit() {
     this.logout();
   }
-  loadUser(){
-    this.identity = this._userService.getIdentity();
-    this.token= this._userService.getToken();
-  }
+
   logout(){
     this._route.params.subscribe(params=> {
       let sure =+params['sure'];

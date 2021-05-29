@@ -1,7 +1,8 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck, Input, Output } from '@angular/core';
 import { UserService } from './services/user.service';
 import { User } from './models/user';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   styleUrls: ['./app.component.css'],
   providers: [UserService]
 })
-export class AppComponent implements OnInit, DoCheck{
+export class AppComponent implements OnInit{
   title = 'seguridad';
   public identity: any;
   public token:any;
@@ -20,15 +21,9 @@ export class AppComponent implements OnInit, DoCheck{
   ){
 
   }
-  ngDoCheck(): void {
-    this.loadUser();
-  }
+
   ngOnInit() {
     this.logout();
-  }
-  loadUser(){
-    this.identity = this._userService.getIdentity();
-    this.token= this._userService.getToken();
   }
   logout(){
     this._route.params.subscribe(params=> {
