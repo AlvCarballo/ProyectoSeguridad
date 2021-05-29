@@ -31,41 +31,7 @@ export class AppComponent implements OnInit, DoCheck{
   ngOnInit() {
     this.logout();
   }
-  onSubmit(form: NgForm){
-    this._userService.signup(this.user).subscribe(
-      response => {
-        if(!response.status || response.status !='error'){
-          this.status2='success';
-          this.identity = response;
-          //Sacar el token
-          this._userService.signup(this.user, true).subscribe(
-            response => {
-              if(!response.status || response.status !='error'){
-                this.token = response;
-                console.log(this.identity);
-                console.log(this.token);
-                //Guardamos el login
-                localStorage.setItem('token', this.token);
-                localStorage.setItem('identity', JSON.stringify(this.identity));
-              }else{
-                this.status2='error';
-              }
-            },
-            error => {
-              this.status2='error';
-              console.log(error);
-            }
-          );
-        }else{
-          this.status2='error';
-        }
-      },
-      error => {
-        this.status2='error';
-        console.log(error);
-      }
-    );
-  }
+
   loadUser(){
     this.identity = this._userService.getIdentity();
     this.token= this._userService.getToken();

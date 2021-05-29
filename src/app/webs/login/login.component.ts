@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit, DoCheck {
                 this.token = response;
                 console.log(this.identity);
                 console.log(this.token);
-                //Guardamos el login
+                 //Guardamos el login
                 localStorage.setItem('token', this.token);
                 localStorage.setItem('identity', JSON.stringify(this.identity));
               }else{

@@ -40,8 +40,8 @@ export class UserService {
     return this._http.post(`${environment.urlApi}login`, params, { headers });
   }
   getIdentity(){
-    let identity= JSON.stringify(localStorage.getItem('identity')||'{}');
-    console.log('En local:'+ identity.toString());
+    let identity2= JSON.stringify(localStorage.getItem('identity')||'{}');
+    let identity = JSON.parse(identity2);
     if(identity&&identity != 'undefined'){
       this.identity=identity;
     }else{

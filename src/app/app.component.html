@@ -55,11 +55,10 @@
 		<div class="Secciones0">
       <router-outlet></router-outlet>
 		</div>
-    <div *ngIf="!token" class="centrado">
+    <div class="centrado">
       <app-login></app-login>
     </div>
     <div id="logeo" class="logeo" *ngIf="token">
-      <h3>Bienvenido {{identity.unombre}}</h3>
       <div class="centrado">
         <button type="button" class="btn btn-danger" routerLink="/logout/1">Desconectar</button>
       </div>
