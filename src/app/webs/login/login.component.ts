@@ -11,7 +11,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   styleUrls: ['./login.component.css'],
   providers: [UserService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, DoCheck {
 
   public page_title: string;
   public user: User;
@@ -64,10 +64,18 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  ngDoCheck(): void {
+    //No puedo activarlo ya que borra al optener el json
+    //this.loadUser();
+  }
   ngOnInit() {
     this.logout();
+    this.loadUser();
   }
-
+  loadUser(){
+    this.token= this._userService.getToken();
+    this.identity = this._userService.getIdentity();
+  }
   logout(){
     this._route.params.subscribe(params=> {
       let sure =+params['sure'];
@@ -77,8 +85,9 @@ export class LoginComponent implements OnInit {
         this.identity=null;
         this.token=null;
         //redirecionamos
-        this._router.navigate(['./']);
+        this._router.navigate(['']);
       }
     });
+
   }
 }

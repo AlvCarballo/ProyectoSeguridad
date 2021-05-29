@@ -1,5 +1,5 @@
 <div id="logeo" class="logeo">
-  <div *ngIf="!token">
+  <div>
     <h1>{{page_title}}</h1>
     <div class="centrado3">
       <div class="alert alert-success" *ngIf="status2=='success'">
@@ -37,10 +37,6 @@
         </div>
       </form>
     </div>
-  </div>
-  <div *ngIf="token" class="centrado">
-    <h3>Bienvenido {{identity.unombre}}</h3>
-    <button type="button" class="btn btn-danger" routerLink="/logout/1">Desconectar</button>
   </div>
   <br>
 </div>

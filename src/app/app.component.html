@@ -55,7 +55,15 @@
 		<div class="Secciones0">
       <router-outlet></router-outlet>
 		</div>
+    <div *ngIf="!token" class="centrado">
       <app-login></app-login>
+    </div>
+    <div id="logeo" class="logeo" *ngIf="token">
+      <h3>Bienvenido {{identity.unombre}}</h3>
+      <div class="centrado">
+        <button type="button" class="btn btn-danger" routerLink="/logout/1">Desconectar</button>
+      </div>
+    </div>
 		<div id="Footer">
 			<p class="centrado">&copy; 2021</p>
 		</div>
