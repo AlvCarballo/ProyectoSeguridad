@@ -2,6 +2,15 @@
   <div class="col-md-12 mt-3">
     <h1>{{page_title}}</h1>
     <hr>
+    <div class="centrado3">
+      <div class="alert alert-success" *ngIf="status=='success'">
+        Tu usuario se ha creado correctamente
+      </div>
+      <div class="alert alert-danger" *ngIf="status=='error'">
+        No se ha podido crear tu usuario intentalo mas tarde
+      </div>
+    </div>
+
     <div class="registro">
       <form class="col-md-5 ml-5 pl-5" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
         <div class="form-group">
