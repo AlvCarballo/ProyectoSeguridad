@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     private _userService:UserService
   ) {
     this.page_title = "Registro de usuarios";
-    this.user = new User('','','1','','','','');
+    this.user = new User('','','1','','','','','');
     this.status="";
    }
 

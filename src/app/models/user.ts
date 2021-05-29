@@ -6,6 +6,7 @@ export class User{
     public unombre:string,
     public uapellidos:string,
     public utelefono:string,
-    public udireccion:string
+    public udireccion:string,
+    public gettoken:any
   ){}
 }

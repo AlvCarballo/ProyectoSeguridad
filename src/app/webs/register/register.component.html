@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
           <label for="uDireccion">Dirección </label>
-          <input type="text" name="uDireccion" #uDireccion="ngModel" [(ngModel)]="user.udireccion" class="form-control" required pattern="[a-zA-Z]+">
+          <input type="text" name="uDireccion" #uDireccion="ngModel" [(ngModel)]="user.udireccion" class="form-control">
           <small *ngIf="!uDireccion.valid && uDireccion.touched" class="invalid-feedback d-block">
             La dirección no es válido
           </small>

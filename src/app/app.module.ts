@@ -12,12 +12,14 @@ import { RecomendacionesModule } from './webs/recomendaciones/recomendaciones.mo
 import { SoftwareseguridadModule } from './webs/softwareseguridad/softwareseguridad.module';
 import { TiposmalwareModule } from './webs/tiposmalware/tiposmalware.module';
 import { RegisterComponent } from './webs/register/register.component';
+import { LoginComponent } from './webs/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

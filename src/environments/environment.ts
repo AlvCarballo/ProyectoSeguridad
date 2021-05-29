@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://www.api-seguridad2.com/'
+  urlApi: 'http://localhost/seguridad-symfony2/app/public/'
 };
 
 
