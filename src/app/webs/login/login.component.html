@@ -1,40 +1,46 @@
 <div id="logeo" class="logeo">
-  <h1>{{page_title}}</h1>
-  <div class="centrado3">
-    <div class="alert alert-success" *ngIf="status2=='success'">
-      Bienvenido, te has logeado correctamente
+  <div *ngIf="!token">
+    <h1>{{page_title}}</h1>
+    <div class="centrado3">
+      <div class="alert alert-success" *ngIf="status2=='success'">
+        Bienvenido, te has logeado correctamente
+      </div>
+      <div class="alert alert-danger" *ngIf="status2=='error'">
+        Usuario o contraseña incorrectos
+      </div>
     </div>
-    <div class="alert alert-danger" *ngIf="status2=='error'">
-      Usuario o contraseña incorrectos
+    <div class="registro">
+      <form class="col-md-5 ml-5 pl-5" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+        <div class="form-group">
+          <label for="uEmail">Email </label>
+          <input type="text" placeholder="Ingresa tu usuario" name="uEmail" #uEmail="ngModel" [(ngModel)]="user.uemail" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          <small *ngIf="!uEmail.valid && uEmail.touched" class="invalid-feedback d-block">
+            El email no es válido
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="uPassword">Contraseña </label>
+          <input type="text" placeholder="Ingresa tu contraseña" name="uPassword" #uPassword="ngModel" [(ngModel)]="user.upassword" class="form-control" required>
+          <small *ngIf="!uPassword.valid && uPassword.touched" class="invalid-feedback d-block">
+            Debes de introducir alguna contraseña
+          </small>
+        </div>
+
+        <div id="linea">
+          <div id="derecha">
+            <button type="submit" value="Identificarse" class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
+          </div>
+
+          <div id="izquierda">
+            <a href="./registro"><button type="button" class="btn btn-success">Registro</button></a>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-  <div class="registro">
-    <form class="col-md-5 ml-5 pl-5" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
-      <div class="form-group">
-        <label for="uEmail">Email </label>
-        <input type="text" placeholder="Ingresa tu usuario" name="uEmail" #uEmail="ngModel" [(ngModel)]="user.uemail" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-        <small *ngIf="!uEmail.valid && uEmail.touched" class="invalid-feedback d-block">
-          El email no es válido
-        </small>
-      </div>
-      <div class="form-group">
-        <label for="uPassword">Contraseña </label>
-        <input type="text" placeholder="Ingresa tu contraseña" name="uPassword" #uPassword="ngModel" [(ngModel)]="user.upassword" class="form-control" required>
-        <small *ngIf="!uPassword.valid && uPassword.touched" class="invalid-feedback d-block">
-          Debes de introducir alguna contraseña
-        </small>
-      </div>
-
-      <div id="linea">
-        <div id="derecha">
-          <button type="submit" value="Identificarse" class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
-        </div>
-
-        <div id="izquierda">
-          <a href="./registro"><button type="button" class="btn btn-success">Registro</button></a>
-        </div>
-      </div>
-    </form>
+  <div *ngIf="token" class="centrado">
+    <h3>Bienvenido {{identity.unombre}}</h3>
+    <button type="button" class="btn btn-danger" routerLink="/logout/1">Desconectar</button>
   </div>
   <br>
 </div>
